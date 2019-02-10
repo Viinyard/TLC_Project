@@ -117,6 +117,9 @@ public class RunResource extends ServerResource {
 				case "lat" :
 					if(parameter.getValue().contains(",")) {
 						String[] values = parameter.getValue().split(",");
+						for(String v : values) {
+							System.out.println(v);
+						}
 						filters.add(StructuredQuery.PropertyFilter.ge(parameter.getName(), Double.parseDouble(values[0])));
 						filters.add(StructuredQuery.PropertyFilter.le(parameter.getName(), Double.parseDouble(values[1])));
 					} else {
@@ -138,7 +141,6 @@ public class RunResource extends ServerResource {
 			System.out.print("parameter " + parameter.getName());
 			System.out.println(" -> " + parameter.getValue());
 		}
-		
 		EntityQuery.Builder eqb = Query.newEntityQueryBuilder().setKind("record");
 		if(!filters.isEmpty()) {
 			if(filters.size() == 1) {

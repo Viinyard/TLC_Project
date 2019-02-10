@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <datastore-indexes
-  autoGenerate="true">
+  autoGenerate="false">
     <datastore-index kind="record" ancestor="false">
-        <property name="hello" direction="asc" />
-        <property name="foo" direction="asc" />
+        <property name="user" direction="asc" />
+        <property name="lat" direction="asc" />
+        <property name="lon" direction="asc" />
+        <property name="timestamp" direction="asc" />
+        <property name="id" direction="asc" />
     </datastore-index>
 </datastore-indexes>
 
